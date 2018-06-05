@@ -1,34 +1,35 @@
 'use strict';
 
-// conditional logic
-// if/else 
+var validAffirtmativeAnswers = ['yes', 'YES', 'y', 'Y'];
+var validNegativeAnswers = ['no', 'NO', 'n', 'N'];
+var playTheGameAnswer;
+var validUserEntry = false;
+var wantsToPlay = false;
 
-// if (condition is met) {
-//   run this line of code;
-// } else {
-//   run this line of code; 
-// }
+//User wants to play?
+while(!validUserEntry) {
+  playTheGameAnswer = prompt('Do you want to play my guessing game?').toUpperCase();
+  console.log('The user entered: '+playTheGameAnswer);
+  if(validAffirtmativeAnswers.includes(playTheGameAnswer)) {
+    console.log('The user provided a valid affirmative response: '+playTheGameAnswer);
+    validUserEntry = true;
+    wantsToPlay = true;
+  }
+  else if(validNegativeAnswers.includes(playTheGameAnswer)) {
+    console.log('The user provided a valid negative response: '+playTheGameAnswer);
+    validUserEntry = true;
+    wantsToPlay = false;
+  }
+  else {
+    console.log('The user provided an invalid response: '+playTheGameAnswer);
+    alert('Invalid response!\n'+
+          'Enter a valid affirmative answer:'+validAffirtmativeAnswers+'\n'+
+          'OR\n'+
+          'Enter a valid negative answer:'+validNegativeAnswers);
+  }
 
-var petAge = parseInt(prompt('How old do you think my dogs are?'));
-
-if(petAge === 9) {
-  alert('That is correct!');
-} else if(petAge > 9) {
-  alert('That is too high.');
-} else {
-  alert('That is too low.');
-}
-
-// if(petAge === 9) {
-//   alert('That is correct!');
-// } else {
-//   alert('That is not correct.');
-// }
-
-// possible inputs: y, yes, yeah, yep, Y, YES, YeS, n, N, no, NO, No
-
-var playGame = prompt('Do you want to play my guessing game? Please only answer with yes or no.').toLowerCase();
-
-if(playGame === 'yes') {
-  
+  //Let's play!
+  if(wantsToPlay) {
+    console.log('The user provided a valid response and wants to play');
+  }
 }
