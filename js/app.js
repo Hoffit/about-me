@@ -16,6 +16,7 @@ var validNegativeAnswers = ['no', 'NO', 'n', 'N'];
 var playTheGameAnswer;
 var validUserEntry = false;
 var wantsToPlay = true;
+
 while(!validUserEntry && wantsToPlay) {
   playTheGameAnswer = prompt(userName+', do you want to play my guessing game?');
   console.log('The user entered: '+playTheGameAnswer);
@@ -164,7 +165,7 @@ while(playAgain && wantsToPlay) {
       console.log('The user is skipping this question! Moving on.');
     }
   }
-  
+
   //Fifth Question: best place I ever lived is  = Auckland
   numberOfQuestions++;
   correctGuess = false;
@@ -234,7 +235,7 @@ while(playAgain && wantsToPlay) {
   playerWantsToTryAgain = true;
   maxGuesses = 6;
   incorrectGuessCount = 0;
-  var myLivedInStates = ['Alaska', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Idaho', 'Kentucky', 'Minnesota', 'Montana', 'Nebraska', 'New Jersey', 'New York', 'Ohio',  'Utah', 'Washington'];
+  var myLivedInStates = ['Alaska', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Idaho', 'Kentucky', 'Minnesota', 'Montana', 'Nebraska', 'New Jersey', 'New York', 'Ohio', 'Utah', 'Washington'];
   while(!correctGuess && playerWantsToTryAgain && (incorrectGuessCount<maxGuesses)) {
     console.log('Begin question 7: in what state have I lived');
     var myLivedInStatesGuess = prompt(userName+', can you guess a State that I have lived in?');
