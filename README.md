@@ -8,7 +8,7 @@ It's inspired by my love of the animated TV show: *Rick and Morty". The image ab
 
 ### What it does
 
-It's a simple interactive web site that poses questions to the user with subject matter based on things about me. Like places I've lived, my age, or my favorite tv show Rick and Morty!
+It's a simple interactive web site that poses questions to the user with subject matter based on things about me. Like places I've lived, my age, or my favorite tv show *"Rick and Morty"*
 
 #### Technology
 
