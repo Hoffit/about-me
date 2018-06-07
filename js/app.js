@@ -81,6 +81,7 @@ while(playAgain && wantsToPlay) {
   //Second Question: favorite tv show is  = Rick and Morty
   numberOfQuestions++;
   correctGuess = false;
+  playerWantsToTryAgain = true;
   while(!correctGuess && playerWantsToTryAgain) {
     console.log('Begin question 2: my fav tv show');
     var myFavoriteTVShow = 'Rick and Morty';
@@ -109,6 +110,7 @@ while(playAgain && wantsToPlay) {
   //Third Question: favorite tv show episode is  = Pickle Rick
   numberOfQuestions++;
   correctGuess = false;
+  playerWantsToTryAgain = true;
   while(!correctGuess && playerWantsToTryAgain) {
     console.log('Begin question 3: my fav episode');
     var myFavoriteEpisode = 'Pickle Rick';
@@ -137,6 +139,7 @@ while(playAgain && wantsToPlay) {
   //Fourth Question: worst place I ever lived is  = OMAHA
   numberOfQuestions++;
   correctGuess = false;
+  playerWantsToTryAgain = true;
   while(!correctGuess && playerWantsToTryAgain) {
     console.log('Begin question 4: my least favorite place to live');
     var myLeaseFavoriteCity = 'Omaha';
@@ -165,6 +168,7 @@ while(playAgain && wantsToPlay) {
   //Fifth Question: best place I ever lived is  = Auckland
   numberOfQuestions++;
   correctGuess = false;
+  playerWantsToTryAgain = true;
   while(!correctGuess && playerWantsToTryAgain) {
     console.log('Begin question 5: my favorite place to live');
     var myFavoriteCity = 'Auckland';
@@ -189,6 +193,78 @@ while(playAgain && wantsToPlay) {
       console.log('The user is skipping this question! Moving on.');
     }
   }
+
+  //Sixth Question: longest number of consequtive days I ever sailed. User can try at most 4 times.
+  numberOfQuestions++;
+  correctGuess = false;
+  playerWantsToTryAgain = true;
+  var maxGuesses = 4;
+  var incorrectGuessCount = 0;
+  while(!correctGuess && playerWantsToTryAgain && (incorrectGuessCount<maxGuesses)) {
+    console.log('Begin question 6: longest sailing trip');
+    var myLongestSailingTripDays = 8;
+    var myLongestSailingTripDaysGuess = prompt(userName+', can you guess my longest sailing excursion (in days)?');
+    myLongestSailingTripDaysGuess = (myLongestSailingTripDaysGuess === null ? null : parseInt(myLongestSailingTripDaysGuess));
+    console.log('The user entered: '+myLongestSailingTripDaysGuess);
+    if(myLongestSailingTripDaysGuess !== null && myLongestSailingTripDaysGuess === myLongestSailingTripDays) {
+      correctGuess = true;
+      correctCount++;
+      console.log('The user got it right!');
+      alert('You got it!');
+    }
+    else if(myLongestSailingTripDaysGuess !== null) {
+      incorrectGuessCount++;
+      console.log('The user got it wrong!');
+      var clueMessage = (myLongestSailingTripDaysGuess > myLongestSailingTripDays ? 'Too high!' : 'Too low');
+      playerWantsToTryAgain = confirm('That is not it! '+clueMessage+'! Try again?');
+      if(!playerWantsToTryAgain) {
+        console.log('The user gave up on this question! Moving on.');
+        alert('Next question!');
+      }
+    }
+    else {
+      playerWantsToTryAgain = false;
+      console.log('The user is skipping this question! Moving on.');
+    }
+  }
+
+  //Seventh Question: in what states have I lived?
+  numberOfQuestions++;
+  correctGuess = false;
+  playerWantsToTryAgain = true;
+  maxGuesses = 6;
+  incorrectGuessCount = 0;
+  var myLivedInStates = ['Alaska', 'Arizona', 'California', 'Colorado', 'Connecticut', 'Idaho', 'Kentucky', 'Minnesota', 'Montana', 'Nebraska', 'New Jersey', 'New York', 'Ohio',  'Utah', 'Washington'];
+  while(!correctGuess && playerWantsToTryAgain && (incorrectGuessCount<maxGuesses)) {
+    console.log('Begin question 7: in what state have I lived');
+    var myLivedInStatesGuess = prompt(userName+', can you guess a State that I have lived in?');
+    console.log('The user entered: '+myLivedInStatesGuess);
+    if(myLivedInStatesGuess !== null && myLivedInStates.includes(myLivedInStatesGuess)) {
+      correctGuess = true;
+      correctCount++;
+      console.log('The user got it right!');
+      alert('You got it!');
+    }
+    else if(myLivedInStatesGuess !== null) {
+      incorrectGuessCount++;
+      console.log('The user got it wrong!');
+      playerWantsToTryAgain = confirm('That is not it! Try again?');
+      if(!playerWantsToTryAgain) {
+        console.log('The user gave up on this question! Moving on.');
+        alert('Next question!');
+      }
+    }
+    else {
+      playerWantsToTryAgain = false;
+      console.log('The user is skipping this question! Moving on.');
+    }
+  }
+  var myStatesLivedMessage = 'Here are the States in which I have lived at least 3 months:\n';
+  var i;
+  for(i=0;i<myLivedInStates.length;i++) {
+    myStatesLivedMessage+=', '+myLivedInStates[i];
+  }
+  alert(myStatesLivedMessage);
 
   //Let the user know how they did, and see if they want to try again
   alert('You got '+correctCount+' out of '+numberOfQuestions);
