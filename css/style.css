@@ -35,3 +35,8 @@ ul {
   margin-right: 0;
   padding-left: 40px;
 }
+
+img.medium {
+  height: 250px;
+  width: 250px;
+}
