@@ -11,9 +11,5 @@ It's a simple interactive web site that poses questions to the user with subject
 #### Technology
 It uses HTML, CSS, and Javascript.
 
-##### Updated June 7 2018
-Migrated all hard coded question code into re-usable functions.
-
-###### Pair Programming
-I served as Driver, Navigator, and Observer through 3 cycles, for the 3 of us.
-The other 2 contributors were Andy and Tom.
+##### Updated June 9 2018
+Final version comitted. Closed - no further updates planned.
